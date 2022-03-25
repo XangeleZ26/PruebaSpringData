@@ -23,8 +23,11 @@ public class Vehiculo {
     @Column(name="anio")
     private int año;
     
-    @Transient //anotación que hace que ignore dicho atributo e Hibernate no lo mapee. (EXTRA: COMO EFECTO SECUNDARIO TIENE QUE ESTE ATRIBUTO NO PODRÁ SER Serializable)
+//    @Transient //anotación que hace que ignore dicho atributo e Hibernate no lo mapee. (EXTRA: COMO EFECTO SECUNDARIO TIENE QUE ESTE ATRIBUTO NO PODRÁ SER Serializable)
+    @OneToOne
+    @JoinColumn(name="cliente_numdoc")
     private Cliente dueño;
+    
     public Vehiculo(){
        
     }
